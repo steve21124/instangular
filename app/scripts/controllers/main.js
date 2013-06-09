@@ -36,16 +36,14 @@ angular.module('instangularApp')
       $event.preventDefault();
     };
 
-    $scope.paginate = function(){
+    $scope.paginate = function(pagination){
       //Track if pagination is happening.
       if(!$scope.paginating){
         // Start pagination
         $scope.paginating = true;
 
-        var nextMaxId = $scope.pagination.next_max_tag_id;
-
         // API Call
-        instagram.getNextPage(tag, nextMaxId)
+        instagram.getNextPage(tag, $scope.pagination.next_max_tag_id)
           .success(function(response, status){
             // Concat page
             $scope.photos.push.apply($scope.photos, response.data);
@@ -54,7 +52,10 @@ angular.module('instangularApp')
             // Finish pagination.
             $scope.paginating = false;
             console.log(status);
-          });
+          })
+          .error(function(response, status){
+            console.log("Couldn't load page");
+          })
       }
     };
 
