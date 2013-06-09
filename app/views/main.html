@@ -1,0 +1,21 @@
+<div>
+  <ul id="gallery" infinite-scorll="paginate()">
+    <li ng-repeat="photo in photos" ng-animate="{enter: 'photo-enter'}">
+      <a href="#" title="{{ photo.user }}" ng-click="openBigPhoto($event)">
+        <img ng-src="{{ photo.images.low_resolution.url }}" alt="caption da foto" width="{{ photo.images.low_resolution..width }}" height="{{ photo.images.low_resolution.height }}">
+      </a>
+    </li>
+  </ul>
+
+  <p class="loader" ng-show="paginating">Loading</p>
+
+  <div id="bigphoto" ng-show="modalVisible" ng-animate="{show: 'bigphoto-show', hide: 'bigphoto-hide'}">
+    <a href="#" class="close" ng-click="closeBigPhoto($event)">x</a>
+    <div class="wrapper">
+      <div class="inner">
+        <img ng-src="{{ photo.images.standard_resolution.url }}" alt="">
+        <p class="caption">{{ photo.caption.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
