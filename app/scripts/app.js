@@ -8,6 +8,6 @@ angular.module('instangularApp', [])
         controller: 'MainCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/ipanema'
       });
   }]);
