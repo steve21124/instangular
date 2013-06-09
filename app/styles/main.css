@@ -119,9 +119,10 @@ ul#gallery img {
   display: block;
   width: 100%;
   border-radius: 3px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 126, main.scss */
+/* line 127, main.scss */
 .bigphoto-show, .bigphoto-hide {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -130,29 +131,29 @@ ul#gallery img {
   transition: all 0.3s;
 }
 
-/* line 133, main.scss */
+/* line 134, main.scss */
 .bigphoto-show {
   -webkit-transform: scale(1.2);
   opacity: 0;
 }
-/* line 137, main.scss */
+/* line 138, main.scss */
 .bigphoto-show.bigphoto-show-active {
   -webkit-transform: scale(1);
   opacity: 1;
 }
 
-/* line 142, main.scss */
+/* line 143, main.scss */
 .bigphoto-hide {
   -webkit-transform: scale(1);
   opacity: 1;
 }
-/* line 146, main.scss */
+/* line 147, main.scss */
 .bigphoto-hide.bigphoto-hide-active {
   -webkit-transform: scale(1.2);
   opacity: 0;
 }
 
-/* line 154, main.scss */
+/* line 155, main.scss */
 .loader {
   position: fixed;
   bottom: 0;

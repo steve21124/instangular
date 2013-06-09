@@ -14,7 +14,7 @@
     <div class="wrapper">
       <div class="inner">
         <img ng-src="{{ photo.images.standard_resolution.url }}" alt="">
-        <p class="caption">{{ photo.caption.text }}</p>
+        <p class="caption" ng-show="photo.caption.text">{{ photo.caption.text }}</p>
       </div>
     </div>
   </div>
