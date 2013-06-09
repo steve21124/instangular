@@ -15,6 +15,10 @@
       <div class="inner">
         <img ng-src="{{ photo.images.standard_resolution.url }}" alt="">
         <p class="caption" ng-show="photo.caption.text">{{ photo.caption.text }}</p>
+        <div class="user">
+          <img ng-src="{{ photo.user.profile_picture }}" alt="{{ photo.user.username }}" width="64" height="64">
+          <h3><a href="http://instagram.com/{{photo.user.username}}" target="_blank" title="{{ photo.user.full_name }}">{{ photo.user.username }}</a></h3>
+        </div>
       </div>
     </div>
   </div>

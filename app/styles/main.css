@@ -2,16 +2,26 @@
 body {
   background: #333;
   margin: 0;
-  font-family: sans-serif;
+  font-family: Lato, sans-serif;
 }
 
-/* line 9, main.scss */
+/* line 7, main.scss */
+a {
+  color: #265f8d;
+  text-decoration: none;
+}
+/* line 11, main.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 18, main.scss */
 .info {
   background: #111;
   margin-bottom: 10px;
   overflow: hidden;
 }
-/* line 14, main.scss */
+/* line 23, main.scss */
 .info p {
   color: #eee;
   margin: 0 0 0 20px;
@@ -24,31 +34,31 @@ body {
   float: left;
 }
 
-/* line 29, main.scss */
+/* line 38, main.scss */
 ul#gallery {
   margin: 0;
   padding: 0;
   list-style: none;
   float: left;
 }
-/* line 35, main.scss */
+/* line 44, main.scss */
 ul#gallery li {
   width: 24%;
   margin: 0.5%;
   float: left;
 }
-/* line 41, main.scss */
+/* line 50, main.scss */
 ul#gallery a {
   transition: all 0.2s;
   display: block;
   box-shadow: 0 0 20px #222;
 }
-/* line 45, main.scss */
+/* line 54, main.scss */
 ul#gallery a:hover {
   -webkit-transform: scale(0.95);
   box-shadow: 0 0 10px #222;
 }
-/* line 51, main.scss */
+/* line 60, main.scss */
 ul#gallery img {
   display: block;
   width: 100%;
@@ -56,7 +66,7 @@ ul#gallery img {
   border-radius: 5px;
 }
 
-/* line 59, main.scss */
+/* line 68, main.scss */
 .photo-enter {
   -webkit-transition: all ease-out 0.5s;
   -moz-transition: all ease-out 0.5s;
@@ -66,13 +76,13 @@ ul#gallery img {
   -webkit-transform: scale(0.8);
   opacity: 0;
 }
-/* line 68, main.scss */
+/* line 77, main.scss */
 .photo-enter.photo-enter-active {
   -webkit-transform: scale(1);
   opacity: 1;
 }
 
-/* line 76, main.scss */
+/* line 85, main.scss */
 #bigphoto {
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
@@ -80,7 +90,7 @@ ul#gallery img {
   height: 100%;
   top: 0;
 }
-/* line 83, main.scss */
+/* line 92, main.scss */
 #bigphoto .wrapper {
   width: 500px;
   margin: 0 auto;
@@ -91,17 +101,22 @@ ul#gallery img {
   box-shadow: 0 0 40px #000;
   border-radius: 5px;
 }
-/* line 94, main.scss */
+/* line 103, main.scss */
+#bigphoto .wrapper:hover .user {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+}
+/* line 107, main.scss */
 #bigphoto .wrapper:hover .caption {
   opacity: 0.8;
   -webkit-transform: translateY(0);
 }
-/* line 101, main.scss */
+/* line 114, main.scss */
 #bigphoto .inner {
   position: relative;
   overflow: hidden;
 }
-/* line 106, main.scss */
+/* line 119, main.scss */
 #bigphoto .caption {
   margin: 0;
   color: #666;
@@ -116,7 +131,7 @@ ul#gallery img {
   transition: all 0.4s;
   -webkit-transform: translateY(50px);
 }
-/* line 121, main.scss */
+/* line 134, main.scss */
 #bigphoto .close {
   position: absolute;
   right: 30px;
@@ -129,20 +144,66 @@ ul#gallery img {
   text-decoration: none;
   transition: all 0.2s;
 }
-/* line 133, main.scss */
+/* line 146, main.scss */
 #bigphoto .close:hover {
   background: #666;
   padding-top: 20px;
 }
-/* line 139, main.scss */
+/* line 152, main.scss */
 #bigphoto img {
   display: block;
   width: 100%;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.5);
 }
+/* line 159, main.scss */
+#bigphoto .user {
+  position: absolute;
+  z-index: 200;
+  top: 10px;
+  left: 10px;
+  width: 90%;
+  opacity: 0;
+  transition: all 0.4s;
+  -webkit-transform: translateY(-50px);
+}
+/* line 169, main.scss */
+#bigphoto .user img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  float: left;
+  border-radius: 300px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+/* line 180, main.scss */
+#bigphoto .user h3 {
+  float: left;
+  margin-left: 15px;
+  font-weight: normal;
+  letter-spacing: -1px;
+  padding: 2px 8px;
+  color: #333;
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+}
+/* line 190, main.scss */
+#bigphoto .user h3:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -12px;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid rgba(255, 255, 255, 0.8);
+}
 
-/* line 148, main.scss */
+/* line 208, main.scss */
 .bigphoto-show, .bigphoto-hide {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -151,29 +212,29 @@ ul#gallery img {
   transition: all 0.3s;
 }
 
-/* line 155, main.scss */
+/* line 215, main.scss */
 .bigphoto-show {
   -webkit-transform: scale(1.2);
   opacity: 0;
 }
-/* line 159, main.scss */
+/* line 219, main.scss */
 .bigphoto-show.bigphoto-show-active {
   -webkit-transform: scale(1);
   opacity: 1;
 }
 
-/* line 164, main.scss */
+/* line 224, main.scss */
 .bigphoto-hide {
   -webkit-transform: scale(1);
   opacity: 1;
 }
-/* line 168, main.scss */
+/* line 228, main.scss */
 .bigphoto-hide.bigphoto-hide-active {
   -webkit-transform: scale(1.2);
   opacity: 0;
 }
 
-/* line 176, main.scss */
+/* line 236, main.scss */
 .loader {
   position: fixed;
   bottom: 0;
@@ -188,7 +249,7 @@ ul#gallery img {
   margin: 0;
 }
 
-/* line 190, main.scss */
+/* line 250, main.scss */
 .loader-show, .loader-hide {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -197,23 +258,23 @@ ul#gallery img {
   transition: all 0.3s;
 }
 
-/* line 198, main.scss */
+/* line 258, main.scss */
 .loader-show {
   -webkit-transform: translateY(50px);
   opacity: 0;
 }
-/* line 202, main.scss */
+/* line 262, main.scss */
 .loader-show.loader-show-active {
   -webkit-transform: translateY(0);
   opacity: 1;
 }
 
-/* line 208, main.scss */
+/* line 268, main.scss */
 .loader-hide {
   -webkit-transform: translateY(0);
   opacity: 1;
 }
-/* line 212, main.scss */
+/* line 272, main.scss */
 .loader-hide.loader-hide-active {
   -webkit-transform: translateY(50px);
   opacity: 0;

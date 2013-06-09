@@ -18,7 +18,7 @@ angular.module('instangularApp')
 
       // Debug
       console.log(status);
-      // console.log(response);
+      console.log(response);
     }).error(function(response, status){
       // Debug
       console.log(status);
