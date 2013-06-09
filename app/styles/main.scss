@@ -186,3 +186,31 @@ ul#gallery {
   font-size: 2em;
   margin: 0;
 }
+
+.loader-show, .loader-hide {
+  -webkit-transition:all 0.3s;
+  -moz-transition:all 0.3s;
+  -ms-transition:all 0.3s;
+  -o-transition:all 0.3s;
+  transition:all 0.3s;
+}
+
+.loader-show {
+  -webkit-transform: translateY(50px);
+  opacity: 0;
+
+  &.loader-show-active {
+    -webkit-transform: translateY(0);
+    opacity: 1
+  }
+}
+
+.loader-hide {
+  -webkit-transform: translateY(0);
+  opacity: 1;
+
+  &.loader-hide-active {
+    -webkit-transform: translateY(50px);
+    opacity: 0
+  }
+}

@@ -187,3 +187,34 @@ ul#gallery img {
   font-size: 2em;
   margin: 0;
 }
+
+/* line 190, main.scss */
+.loader-show, .loader-hide {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 198, main.scss */
+.loader-show {
+  -webkit-transform: translateY(50px);
+  opacity: 0;
+}
+/* line 202, main.scss */
+.loader-show.loader-show-active {
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* line 208, main.scss */
+.loader-hide {
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+/* line 212, main.scss */
+.loader-hide.loader-hide-active {
+  -webkit-transform: translateY(50px);
+  opacity: 0;
+}

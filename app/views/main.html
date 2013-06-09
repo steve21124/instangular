@@ -7,7 +7,7 @@
     </li>
   </ul>
 
-  <p class="loader" ng-show="paginating">Loading</p>
+  <p class="loader" ng-show="paginating" ng-animate="{show: 'loader-show', hide: 'loader-hide'}">Loading</p>
 
   <div id="bigphoto" ng-show="modalVisible" ng-animate="{show: 'bigphoto-show', hide: 'bigphoto-hide'}">
     <a href="#" class="close" ng-click="closeBigPhoto($event)">x</a>
